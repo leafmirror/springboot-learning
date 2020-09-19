@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.ToString;
 import org.springframework.http.HttpStatus;
 
-
 @ToString
 @Getter
 public enum ResultStatus {

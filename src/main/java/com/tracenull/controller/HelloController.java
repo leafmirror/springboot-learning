@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.annotation.WebFilter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ import java.util.Map;
  * https://mp.weixin.qq.com/s/XtWXyvkxJPwhzTMh9SeU4w
  */
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/api")
 public class HelloController {
     private static final HashMap<String, Object> INFO;
 

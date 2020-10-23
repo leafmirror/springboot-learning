@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
+/**
+ * https://zebinh.github.io/2020/07/RocketMQDeploymentWithSpringBootDemo/
+ */
 @RestController
 public class RocketController {
     @Autowired

@@ -10,6 +10,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 public class TestController {
     @Autowired
@@ -38,11 +40,17 @@ public class TestController {
         return (lock == null) ? "获取失败" : "获取成功";
     }
 
-    @RequestMapping(value = "nuTest",method = RequestMethod.GET)
+    @RequestMapping(value = "nuTest", method = RequestMethod.GET)
     public String nuTest() {
         redisTemplate.delete("redisLock");
         redisTemplate.delete("redisLock2");
         redisTemplate.delete("redisLock3");
         return "成功";
+    }
+
+    @RequestMapping(value = "getCode", method = RequestMethod.GET)
+    public void getCode(String key) {
+        String uuid = UUID.randomUUID().toString().replaceAll("-","");
+        System.out.println(uuid);
     }
 }
